@@ -6,6 +6,7 @@ class Game {
         this.background = new Background()
         this.player = new Player()
         this.obstacle = new Obstacle()
+        this.condition = false
         this.backgroundImages = []
     }
 
@@ -20,10 +21,20 @@ class Game {
 
     draw() {
         //this draw should be called by the game
-        //console.log('game drawing')
+        //console.log('game drawing')        
         clear()
         this.background.draw()
         this.player.draw()
-        this.obstacle.draw()
+        //if I want to make the obstacle appears more often i have to change the following code-line
+        if((Math.floor((Math.random() * 270))) % 249 === 0 && game.obstacle.appearing===false)
+        {
+            game.obstacle.appearing = true
+            this.condition = true
+            game.obstacle.x = width
+        }
+        this.obstacle.draw(this.condition)
+        
+        // console.log(frameCount)
     }
+    
 }
