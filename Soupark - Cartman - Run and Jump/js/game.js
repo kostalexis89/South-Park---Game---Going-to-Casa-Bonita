@@ -13,7 +13,7 @@ class Game {
             {src: loadImage('assets/background/bg.png'), x: 0, speed: 8 },
             {src: loadImage('assets/background/bg.jpg'), x: 0, speed: 0}
         ]
-        this.playerImage = loadImage('assets/player/cartman.gif')
+        this.playerImage = [loadImage('assets/player/cartman.gif'), loadImage('assets/player/cjump2.png')]
     }
 
     draw() {
