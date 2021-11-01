@@ -40,7 +40,7 @@ class Player {
             }
         }
        
-      //  image(game.playerImage[0], this.x, this.y, this.width, this.height)
+      //  image(game.playerImage[0], this.x, this.y, this.width, this.height)!!
         
     }
     jump() {
