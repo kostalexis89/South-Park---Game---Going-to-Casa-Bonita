@@ -15,8 +15,15 @@ class Game {
             {src: loadImage('assets/background/bg.png'), x: 0, speed: 8 },
             {src: loadImage('assets/background/bg.jpg'), x: 0, speed: 0}
         ]
-        this.playerImage = [loadImage('assets/player/cartman.gif'), loadImage('assets/player/cjump2.png'), loadImage('assets/player/explosion.gif')]
+        this.playerImage = [loadImage('assets/player/cartman.gif'), loadImage('assets/player/cjump2.png'), loadImage('assets/player/explosion.gif'), loadImage('assets/player/cartmancries.gif')]
         this.obstacleImage = loadImage('assets/obstacle/obstacle.png')
+        this.cartmanCries = loadSound('assets/sounds/CartmanGameOver.mp3');
+        this.backgroundMusic = loadSound('assets/sounds/South Park - End Credits Theme (Extended).mp3')
+        
+    }
+    setup(){
+        this.backgroundMusic.setVolume(0.1)
+        this.backgroundMusic.play()
     }
 
     draw() {
@@ -24,9 +31,7 @@ class Game {
         //console.log('game drawing')        
         clear()
         this.background.draw()
-            this.player.draw()
-       
-        
+        this.player.draw()
         //if I want to make the obstacle appears more often i have to change the following code-line
         if((Math.floor((Math.random() * 270))) % 249 === 0 && game.obstacle.appearing===false)
         {
@@ -34,8 +39,7 @@ class Game {
             this.condition = true
             game.obstacle.x = width
         }
-        this.obstacle.draw(this.condition)
-        
+        this.obstacle.draw(this.condition)     
         // console.log(frameCount)
     }
     checkIfAlive(){
@@ -43,20 +47,20 @@ class Game {
            if(Math.abs(this.player.y - this.obstacle.y)<200){
             console.log('looser')
             this.player.alive = false
+            if(!this.player.cryingIsPlaying){
+                game.backgroundMusic.stop()
+                game.cartmanCries.play()
+            }
            }
            else {
             this.player.alive = true
             //this.player.gameOver = true
            }
-            
-           
         }
     }
-    giveAgameOver() {
-        
+    giveAgameOver() {   
+            //game.cartmanCries.play()
             return true
-       
-        
     }
     
 }

@@ -1,4 +1,5 @@
 class Player {
+    
     constructor() {
         this.gravity = 0.3
         this.velocity = 0
@@ -9,6 +10,8 @@ class Player {
         this.isHeJumping = false
         this.alive = true
         this.gameOver = false
+        this.cryingIsPlaying = false
+        this.something = true
     
     }
     draw() {
@@ -30,25 +33,28 @@ class Player {
         }
         else {
             if(!this.gameOver){
+                //cartmanCries.play()
                 image(game.playerImage[2], this.x, this.y - 200, this.width + 200 , this.height + 200)
                 setInterval(() => {
                     this.gameOver = game.giveAgameOver()
                 }, 1350);
-                
-                
+            }
+            if(this.gameOver===true && this.something){
+                image(game.playerImage[3], this.x+70, this.y, this.width+20, this.height)
+                setInterval(() => {
+                    this.something=false
+                }, 11640);
                 
             }
         }
-       
       //  image(game.playerImage[0], this.x, this.y, this.width, this.height)!!
-        
     }
     jump() {
         this.velocity = -12.5
         this.isHeJumping = true
+        //game.cartmanCries.play()
     }
     // checkIfAlive(){
     //     console.log('im checking')
-
     // }
 }
