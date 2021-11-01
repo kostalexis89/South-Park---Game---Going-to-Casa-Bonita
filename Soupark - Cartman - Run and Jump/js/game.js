@@ -2,14 +2,12 @@ const width = 1900
 const height = 1200
 
 class Game {
-    constructor() {
-        this.background = new Background()
-        this.player = new Player()
-        this.obstacle = new Obstacle()
-        this.condition = false
-        this.backgroundImages = []
+    
+    setup(){
+        this.backgroundMusic.setVolume(0.02)
+       // this.backgroundMusic.play()
+        
     }
-
     preload() {
         this.backgroundImages = [
             {src: loadImage('assets/background/bg.png'), x: 0, speed: 8 },
@@ -17,13 +15,20 @@ class Game {
         ]
         this.playerImage = [loadImage('assets/player/cartman.gif'), loadImage('assets/player/cjump2.png'), loadImage('assets/player/explosion.gif'), loadImage('assets/player/cartmancries.gif')]
         this.obstacleImage = loadImage('assets/obstacle/obstacle.png')
+        this.backgroundMusic = loadSound('assets/sounds/Minorities in my Waterpark.mp3')
         this.cartmanCries = loadSound('assets/sounds/CartmanGameOver.mp3');
-        this.backgroundMusic = loadSound('assets/sounds/South Park - End Credits Theme (Extended).mp3')
+        
         
     }
-    setup(){
-        this.backgroundMusic.setVolume(0.1)
-        this.backgroundMusic.play()
+    
+    constructor() {
+        this.background = new Background()
+        this.player = new Player()
+        this.obstacle = new Obstacle()
+        this.condition = false
+        this.backgroundImages = []
+        this.backgroundMusic
+        
     }
 
     draw() {
@@ -43,7 +48,7 @@ class Game {
         // console.log(frameCount)
     }
     checkIfAlive(){
-        if((this.obstacle.x - this.player.x - this.player.width + 95) < 1 && (this.player.x - this.obstacle.x - this.obstacle.width +115)<1) {
+        if((this.obstacle.x - this.player.x - this.player.width + 100) < 1 && (this.player.x - this.obstacle.x - this.obstacle.width +160)<1) {
            if(Math.abs(this.player.y - this.obstacle.y)<200){
             console.log('looser')
             this.player.alive = false

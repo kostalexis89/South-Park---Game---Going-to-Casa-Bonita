@@ -52,6 +52,7 @@ class Player {
     jump() {
         this.velocity = -12.5
         this.isHeJumping = true
+        
         //game.cartmanCries.play()
     }
     // checkIfAlive(){

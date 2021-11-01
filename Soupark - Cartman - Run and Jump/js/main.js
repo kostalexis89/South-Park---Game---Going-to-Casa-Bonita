@@ -10,6 +10,7 @@ function setup() {
     createCanvas(width,height)
     game.setup()
     
+    
 }
 function draw() {
     game.draw()
@@ -19,4 +20,9 @@ function keyPressed() {
        game.player.jump()
        //console.log('jump')
     }
+    if(keyCode===81){
+       // game.player.jump()
+        //console.log('jump')
+        game.backgroundMusic.play()
+     }
 }
