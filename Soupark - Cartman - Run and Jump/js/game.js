@@ -5,6 +5,7 @@ class Game {
     constructor() {
         this.background = new Background()
         this.player = new Player()
+        this.obstacle = new Obstacle()
         this.backgroundImages = []
     }
 
@@ -14,6 +15,7 @@ class Game {
             {src: loadImage('assets/background/bg.jpg'), x: 0, speed: 0}
         ]
         this.playerImage = [loadImage('assets/player/cartman.gif'), loadImage('assets/player/cjump2.png')]
+        this.obstacleImage = loadImage('assets/obstacle/obstacle.png')
     }
 
     draw() {
@@ -22,5 +24,6 @@ class Game {
         clear()
         this.background.draw()
         this.player.draw()
+        this.obstacle.draw()
     }
 }
