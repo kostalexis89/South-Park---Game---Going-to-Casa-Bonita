@@ -46,7 +46,7 @@ class Game {
            }
            else {
             this.player.alive = true
-            this.player.gameOver = true
+            //this.player.gameOver = true
            }
             
            

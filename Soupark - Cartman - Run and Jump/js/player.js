@@ -8,6 +8,7 @@ class Player {
         this.height = 230
         this.isHeJumping = false
         this.alive = true
+        this.gameOver = false
     
     }
     draw() {
@@ -28,8 +29,15 @@ class Player {
             game.checkIfAlive()
         }
         else {
-            
-            image(game.playerImage[2], this.x, this.y - 200, this.width + 200 , this.height + 200)
+            if(!this.gameOver){
+                image(game.playerImage[2], this.x, this.y - 200, this.width + 200 , this.height + 200)
+                setInterval(() => {
+                    this.gameOver = game.giveAgameOver()
+                }, 1350);
+                
+                
+                
+            }
         }
        
       //  image(game.playerImage[0], this.x, this.y, this.width, this.height)
