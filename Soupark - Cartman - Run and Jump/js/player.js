@@ -7,6 +7,7 @@ class Player {
         this.width = 170
         this.height = 230
         this.isHeJumping = false
+        this.alive = true
     }
     draw() {
         this.velocity += this.gravity
@@ -22,9 +23,16 @@ class Player {
             image(game.playerImage[1], this.x, this.y, this.width, this.height)
         }
       //  image(game.playerImage[0], this.x, this.y, this.width, this.height)
+        if(game.checkIfAlive()){
+            
+        }
     }
     jump() {
         this.velocity = -12.5
         this.isHeJumping = true
     }
+    // checkIfAlive(){
+    //     console.log('im checking')
+
+    // }
 }

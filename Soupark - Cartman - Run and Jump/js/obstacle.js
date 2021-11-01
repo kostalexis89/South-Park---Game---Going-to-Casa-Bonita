@@ -3,7 +3,7 @@ class Obstacle {
     constructor(){
         this.x = width
         this.y = height - 200
-        this.width = 400
+        this.width = 500
         this.height = 160
         this.appearing = false
         

@@ -36,5 +36,14 @@ class Game {
         
         // console.log(frameCount)
     }
+    checkIfAlive(){
+        if((this.obstacle.x - this.player.x - this.player.width + 95) < 1 && (this.player.x - this.obstacle.x - this.obstacle.width +115)<1) {
+           if(Math.abs(this.player.y - this.obstacle.y)<200){
+            console.log('looser')
+           }
+            
+            //return false
+        }
+    }
     
 }
