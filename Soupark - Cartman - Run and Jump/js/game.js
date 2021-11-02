@@ -74,8 +74,26 @@ class Game {
        
     }
     checkIfAlive(){
-        console.log('i am checking if alive')
         
+        this.obstacle.forEach(function (opponent) {
+            // console.log(game.player.x)
+			// console.log('i am checking if alive')
+            if((opponent.x - game.player.x - game.player.width + 100) < 1 && (game.player.x - opponent.x - opponent.width +160)<1) {
+                if(Math.abs(game.player.y - opponent.y)<200){
+                 console.log('looser')
+                 game.player.alive = false
+                 if(!game.player.cryingIsPlaying){
+                     game.backgroundMusic.stop()
+                     game.cartmanCries.play()
+                 }
+                }
+                else {
+                 game.player.alive = true
+                 //this.player.gameOver = true
+     
+                }
+             }
+		})
 
         // if((this.obstacle.x - this.player.x - this.player.width + 100) < 1 && (this.player.x - this.obstacle.x - this.obstacle.width +160)<1) {
         //    if(Math.abs(this.player.y - this.obstacle.y)<200){

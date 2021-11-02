@@ -12,7 +12,7 @@ class Obstacle {
         
     }
     draw (){
-        console.log('am i here?')
+
         //if(this.appearing){
           //  if(game.player.alive){
               this.x= this.x - game.backgroundImages[0].speed
