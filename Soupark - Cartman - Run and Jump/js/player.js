@@ -29,7 +29,7 @@ class Player {
             if(this.velocity !==0 && this.isHeJumping){
                 image(game.playerImage[1], this.x, this.y, this.width, this.height)
             }
-            game.checkIfAlive()
+           game.checkIfAlive()
         }
         else {
             if(!this.gameOver){
