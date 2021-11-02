@@ -17,6 +17,8 @@ class Game {
         this.obstacleImage = loadImage('assets/obstacle/obstacle.png')
         this.backgroundMusic = loadSound('assets/sounds/Minorities in my Waterpark.mp3')
         this.cartmanCries = loadSound('assets/sounds/CartmanGameOver.mp3');
+        this.kyleImage = loadImage('assets/obstacle/kyle.gif')
+        
         
         
     }
@@ -25,8 +27,6 @@ class Game {
         this.background = new Background()
         this.player = new Player()
         this.obstacle = new Obstacle()
-        this.condition = false
-        this.backgroundImages = []
         this.backgroundMusic
         
     }
@@ -38,14 +38,16 @@ class Game {
         this.background.draw()
         this.player.draw()
         //if I want to make the obstacle appears more often i have to change the following code-line
-        if((Math.floor((Math.random() * 270))) % 249 === 0 && game.obstacle.appearing===false)
+        if((Math.floor((Math.random() * 270))) % 249 === 0 && this.obstacle.appearing===false)
         {
-            game.obstacle.appearing = true
-            this.condition = true
-            game.obstacle.x = width
+            this.obstacle = new Obstacle()
+            this.obstacle.appearing = true
+           // this.obstacle = new Obstacle()
+            this.obstacle.x = width
         }
-        this.obstacle.draw(this.condition)     
+        this.obstacle.draw('obstacleImage')     
         // console.log(frameCount)
+        //this.kyle.draw()
     }
     checkIfAlive(){
         if((this.obstacle.x - this.player.x - this.player.width + 100) < 1 && (this.player.x - this.obstacle.x - this.obstacle.width +160)<1) {
@@ -67,5 +69,4 @@ class Game {
             //game.cartmanCries.play()
             return true
     }
-    
 }

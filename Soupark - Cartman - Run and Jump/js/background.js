@@ -11,7 +11,5 @@ class Background {
         if (game.backgroundImages[0].x < -width){
             game.backgroundImages[0].x = 0
         }
-        
     }
-
 }

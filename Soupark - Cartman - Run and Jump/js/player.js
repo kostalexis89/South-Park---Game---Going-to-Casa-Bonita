@@ -33,7 +33,6 @@ class Player {
         }
         else {
             if(!this.gameOver){
-                //cartmanCries.play()
                 image(game.playerImage[2], this.x, this.y - 200, this.width + 200 , this.height + 200)
                 setInterval(() => {
                     this.gameOver = game.giveAgameOver()
@@ -47,15 +46,9 @@ class Player {
                 
             }
         }
-      //  image(game.playerImage[0], this.x, this.y, this.width, this.height)!!
     }
     jump() {
         this.velocity = -12.5
         this.isHeJumping = true
-        
-        //game.cartmanCries.play()
     }
-    // checkIfAlive(){
-    //     console.log('im checking')
-    // }
 }
