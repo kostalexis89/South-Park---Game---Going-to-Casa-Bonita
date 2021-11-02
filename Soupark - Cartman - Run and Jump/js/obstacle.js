@@ -12,11 +12,11 @@ class Obstacle {
         
     }
     draw (){
-
+ 
         //if(this.appearing){
-          //  if(game.player.alive){
+           if(game.player.alive){
               this.x= this.x - game.backgroundImages[0].speed
-        //}
+            }
                image(this.image, this.x, this.y, this.width, this.height)
           //   if(this.x < -this.width){
             //     this.appearing = false

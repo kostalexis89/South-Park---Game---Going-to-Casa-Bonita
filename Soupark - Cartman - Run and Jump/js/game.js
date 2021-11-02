@@ -78,7 +78,7 @@ class Game {
         this.obstacle.forEach(function (opponent) {
             // console.log(game.player.x)
 			// console.log('i am checking if alive')
-            if((opponent.x - game.player.x - game.player.width + 100) < 1 && (game.player.x - opponent.x - opponent.width +160)<1) {
+            if((opponent.x - game.player.x - game.player.width + 70) < 1 && (game.player.x - opponent.x - opponent.width +160)<1) {
                 if(Math.abs(game.player.y - opponent.y)<200){
                  console.log('looser')
                  game.player.alive = false
