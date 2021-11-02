@@ -16,7 +16,7 @@ class Game {
         this.playerImage = [loadImage('assets/player/cartman.gif'), loadImage('assets/player/cjump2.png'), loadImage('assets/player/explosion.gif'), loadImage('assets/player/cartman dead.gif')]
         this.obstacleImage = loadImage('assets/obstacle/obstacle.png')
         this.backgroundMusic = loadSound('assets/sounds/Minorities in my Waterpark.mp3')
-        this.cartmanCries = loadSound('assets/sounds/CartmanGameOver3.mp3');
+        this.cartmanCries = loadSound('assets/sounds/cartmandies3.mp3');
         this.kyleImage = loadImage('assets/obstacle/kyle.gif')
         this.opponents = [
             {
