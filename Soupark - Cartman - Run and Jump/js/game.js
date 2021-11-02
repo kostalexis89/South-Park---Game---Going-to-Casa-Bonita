@@ -63,7 +63,7 @@ class Game {
 
             //this.obstacle = new Obstacle()
            // this.obstacle.appearing = true
-           // this.obstacle = new Obstacle()
+           // this.obstacle = new Obstacle() 
            // this.obstacle.x = width
         }
         this.obstacle.forEach(function (opponent) {
@@ -89,7 +89,7 @@ class Game {
         //    else {
         //     this.player.alive = true
         //     //this.player.gameOver = true
-        
+
         //    }
         // }
     }
