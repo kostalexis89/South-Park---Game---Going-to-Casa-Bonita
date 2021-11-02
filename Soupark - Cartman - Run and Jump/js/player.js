@@ -39,7 +39,8 @@ class Player {
                 }, 1350);
             }
             if(this.gameOver===true && this.something){
-                image(game.playerImage[3], this.x+70, this.y, this.width+20, this.height)
+                image(game.playerImage[3], this.x+70, this.y -40, this.width+20, this.height)
+                this.y-= 3
                 setInterval(() => {
                     this.something=false
                 }, 11640);
