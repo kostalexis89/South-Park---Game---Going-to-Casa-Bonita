@@ -105,10 +105,18 @@ class Game {
         //drawing the opponents
         this.obstacle.forEach(function (opponent) {
            // console.log('I am drawing the opponent')
-			if(opponent.x> - opponent.width){
+			
                 opponent.draw()
-            }
+            
 		})
+        this.obstacle = this.obstacle.filter(function(obs){
+            if(obs.x<=-obs.width){
+                return false
+            } else {
+                return true
+            }
+        })
+        console.log(this.obstacle)
         //next lines are all about drawing the chickenNuggets / coins
         if((Math.floor((Math.random() * 270))) % 249 === 0 && frameCount2 > 150){
             frameCount2 = 0
@@ -130,6 +138,10 @@ class Game {
               //  console.log('I am drawing the coin')
             }
 		})
+        //HERE I DRAW THE 
+        game.player.shoots.forEach(function (shoot){
+            shoot.draw()
+        })
 
         this.nuggets = this.nuggets.filter(nugget => {
 			if (nugget.collision(this.player)) {

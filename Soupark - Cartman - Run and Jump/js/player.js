@@ -14,6 +14,7 @@ class Player {
         this.something = true
         this.nuggets = 0
         this.boxes =0
+        this.shoots = []
     
     }
     draw() {
@@ -45,13 +46,16 @@ class Player {
                 this.y-= 3
                 setInterval(() => {
                     this.something=false
-                }, 11640);
-                
+                }, 11640);     
             }
         }
     }
     jump() {
         this.velocity = -12.5
         this.isHeJumping = true
+    }
+    shoot() {
+        game.player.boxes--
+        this.shoots.push(new Shoots(game.coins[1].image)) 
     }
 }

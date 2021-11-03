@@ -53,12 +53,35 @@ class Coins {
 			return true
 		}
 	}
-
-
     draw(){
         if(game.player.alive){
             this.x= this.x - game.backgroundImages[0].speed
         }
         image(this.image, this.x, this.y , this.width, this.height)
     }
+}
+class Shoots {
+    constructor(image){
+        this.x = 200
+        this.y = 200
+        this.width = 130
+        this.height = 130
+        this.image = image
+    }
+    draw() {
+        console.log('i am drawing')
+        //lets first draw the KFC BOX
+    
+
+      let rotation = atan2(game.obstacle[0].y -this.y, game.obstacle[0].x - this.x )
+      this.x += cos(rotation) * 20;
+      this.y += sin(rotation) * 20;
+      image(this.image, this.x, this.y , this.width, this.height)
+
+        
+    //   let rotation = atan2(game.player.y - this.y, game.player.x - this.x);
+    //   this.x += cos(rotation) * this.speed;
+    //   this.y += sin(rotation) * this.speed;
+    }
+    
 }
