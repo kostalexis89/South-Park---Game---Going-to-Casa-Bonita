@@ -25,3 +25,17 @@ class Obstacle {
         
     //}//
 }
+//no its time to add some chicken nugets
+class Coins {
+    constructor(coin){
+        this.image = coin.image
+        this.x = width
+        this.y = (Math.random() * height) / 2.5
+        this.width = coin.width
+        this.height = coin.height
+    }
+    draw(){
+        this.x = this.x - game.backgroundImages[0].speed
+        image(this.image, this.x, this.y, this.width, this.height)
+    }
+}

@@ -59,43 +59,79 @@ class Game {
                 width: 230,
                 height: 300
             }
-        ] 
+        ]
+        this.coins =[
+            {
+                name: 'chickenNugget',
+                points: 1,
+                image: loadImage('assets/coins/chickenNugget.gif'),
+                rare: 6,
+                width: 60,
+                height: 60
+            },
+            {
+                name: 'KfcBox',
+                points: 5,
+                image: loadImage('assets/coins/kfc-bucket.gif'),
+                rare: 3,
+                width: 100,
+                height: 100
+            }
+        ]
     }
     
     constructor() {
         this.background = new Background()
         this.player = new Player()
         this.obstacle = []
+        this.nuggets = []
         this.backgroundMusic
+        
         
     }
 
     draw() {
-        //this draw should be called by the game
-        //console.log('game drawing')        
         clear()
         this.background.draw()
         this.player.draw()
-        //if I want to make the obstacle appears more often i have to change the following code-line
+        let frameCount2= frameCount
+        //next lines are all about calling the obstacles
         if((Math.floor((Math.random() * 270))) % 249 === 0 && frameCount > 100){
-      //  if(frameCount%300===0)
-       // {
-           frameCount = 0
+            frameCount2 = frameCount
+            frameCount = 0
             let random = Math.floor((Math.random() * this.opponents.length))
-            console.log(this.opponents[random])
+           // console.log(this.opponents[random])
             this.obstacle.push(new Obstacle(this.opponents[random]))
-
-            //this.obstacle = new Obstacle()
-           // this.obstacle.appearing = true
-           // this.obstacle = new Obstacle() 
-           // this.obstacle.x = width
         }
+        //drawing the opponents
         this.obstacle.forEach(function (opponent) {
+           // console.log('I am drawing the opponent')
 			if(opponent.x> - opponent.width){
                 opponent.draw()
             }
 		})
-       
+        //next lines are all about drawing the chickenNuggets / coins
+        if((Math.floor((Math.random() * 270))) % 249 === 0 && frameCount2 > 200){
+            frameCount2 = 0
+            //console.log('Iam here')
+            let randomNumber = (Math.floor((Math.random() * 4)))
+            if(randomNumber*this.coins[0].rare > randomNumber*this.coins[1].rare){
+                console.log('Nugget')
+                this.nuggets.push(new Coins(this.coins[0]))
+               // console.log(this.nuggets)
+            } else {
+                console.log('box')
+                this.nuggets.push(new Coins(this.coins[1]))
+            }
+        }
+        //drawing the nuggets
+        this.nuggets.forEach(function (coin) {
+			if(coin.x> - coin.width){
+                coin.draw()
+              //  console.log('I am drawing the coin')
+            }
+		})
+
     }
     checkIfAlive(){
         
