@@ -132,6 +132,14 @@ class Game {
             }
 		})
 
+        this.nuggets = this.nuggets.filter(nugget => {
+			if (nugget.collision(this.player)) {
+				return false
+			} else {
+				return true
+			}
+		})
+
     }
     checkIfAlive(){
         
