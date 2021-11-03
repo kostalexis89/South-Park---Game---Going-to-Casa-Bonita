@@ -33,24 +33,19 @@ class Coins {
         this.y = height - game.player.height*2 -100
         this.width = coin.width
         this.height = coin.height
+        this.points = coin.points
     }
 
     collision(playerInfo) {
-		// console.log('collision', playerInfo)
-		// get the middle of the player 
 		const playerX = playerInfo.x + playerInfo.width / 2
 		const playerY = playerInfo.y + playerInfo.height / 2
-		// get the middle of the obstacle
 		const obstacleX = this.x + this.width// / 2
 		const obstacleY = this.y + this.height// / 2
-		// measure the distance between obstacle and player
 		if (dist(obstacleX, obstacleY, playerX, playerY) > 150) {
-			// this is not a collision
 			return false
 		} else {
-			// 
-			// game.player.score += 10
-			// console.log(game.player.score)
+			game.player.score += this.points
+			console.log(game.player.score)
 			return true
 		}
 	}
