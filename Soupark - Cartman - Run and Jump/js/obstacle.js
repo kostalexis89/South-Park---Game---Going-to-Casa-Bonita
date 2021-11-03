@@ -44,8 +44,12 @@ class Coins {
 		if (dist(obstacleX, obstacleY, playerX, playerY) > 150) {
 			return false
 		} else {
-			game.player.score += this.points
-			console.log(game.player.score)
+			game.player.nuggets += this.points
+            if(game.player.nuggets>=5){
+                game.player.nuggets = 0
+                game.player.boxes++
+            }
+			//console.log(game.player.score)
 			return true
 		}
 	}

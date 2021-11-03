@@ -1,14 +1,13 @@
 const width = 1900
 const height = 1200
-
 class Game {
     
     setup(){
         this.backgroundMusic.setVolume(0.02)
        // this.backgroundMusic.play()
-        
     }
     preload() {
+        
         this.backgroundImages = [
             {src: loadImage('assets/background/bg.png'), x: 0, speed: 8 },
             {src: loadImage('assets/background/bg.jpg'), x: 0, speed: 0}
@@ -111,7 +110,7 @@ class Game {
             }
 		})
         //next lines are all about drawing the chickenNuggets / coins
-        if((Math.floor((Math.random() * 270))) % 249 === 0 && frameCount2 > 200){
+        if((Math.floor((Math.random() * 270))) % 249 === 0 && frameCount2 > 150){
             frameCount2 = 0
             //console.log('Iam here')
             let randomNumber = (Math.floor((Math.random() * 4)))
@@ -139,6 +138,16 @@ class Game {
 				return true
 			}
 		})
+        //drawing the score
+        textSize(width / 40);
+        text('Chicken Nuggets :' + game.player.nuggets, width - 450, 100);
+        text('KFC Boxes :' + game.player.boxes, width - 330, 180);
+        textSize(100);
+        fill(255, 0, 0);
+        // text('SCORE: ' + this.player.score, 420, 600);
+        // textSize(width / 23);
+        // 
+        // text('PRESS R TO PLAY AGAIN', 420, 800);
 
     }
     checkIfAlive(){

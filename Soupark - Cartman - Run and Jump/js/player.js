@@ -12,7 +12,8 @@ class Player {
         this.gameOver = false
         this.cryingIsPlaying = false
         this.something = true
-        this.score = 0
+        this.nuggets = 0
+        this.boxes =0
     
     }
     draw() {
