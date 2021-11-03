@@ -156,10 +156,6 @@ class Game {
         text('KFC Boxes :' + game.player.boxes, width - 330, 180);
         textSize(100);
         fill(255, 0, 0);
-        // text('SCORE: ' + this.player.score, 420, 600);
-        // textSize(width / 23);
-        // 
-        // text('PRESS R TO PLAY AGAIN', 420, 800);
 
     }
     checkIfAlive(){

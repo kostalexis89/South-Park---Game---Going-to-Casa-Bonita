@@ -55,7 +55,9 @@ class Player {
         this.isHeJumping = true
     }
     shoot() {
+        if(game.obstacle.length>0){
         game.player.boxes--
         this.shoots.push(new Shoots(game.coins[1].image)) 
+        }
     }
 }
