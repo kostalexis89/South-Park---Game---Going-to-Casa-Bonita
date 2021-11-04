@@ -55,7 +55,7 @@ class Player {
         this.isHeJumping = true
     }
     shoot() {
-        if(game.obstacle.length>this.shooting){
+        if(game.obstacle.length>this.shooting && game.player.alive){
         game.player.boxes--
         this.shooting++
         this.shoots.push(new Shoots(game.coins[1].image)) 
