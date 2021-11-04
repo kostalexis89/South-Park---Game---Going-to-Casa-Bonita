@@ -8,6 +8,7 @@ class Obstacle {
         this.height = opponent.height
         this.appearing = false
         this.image = opponent.image
+        this.point = opponent.point
        // console.log(this.image)
         
     }
@@ -95,10 +96,12 @@ class Shoots {
             game.bombY = obstacle.y     
             game.bombPurpose = true       
             game.player.shoots.shift()
+            console.log(obstacle)
+            game.player.points+= obstacle.point
             game.obstacle.shift()
             console.log('Boom') 
             game.bombExplosion = loadImage('assets/coins/bomb-explosion.gif')
-            
+            game.boom.play()
             return true
         }
     }

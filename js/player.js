@@ -14,6 +14,7 @@ class Player {
         this.nuggets = 0
         this.boxes =5
         this.shoots = []
+        this.points = 0
     }
     draw() {
         //in every draw I check if Eric cartman is alive or dead. If he is dead then we will add the explosion gif
