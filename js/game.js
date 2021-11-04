@@ -85,8 +85,9 @@ class Game {
         this.obstacle = []
         this.nuggets = []
         this.backgroundMusic
-        
-        
+        this.bombX
+        this.bombY
+        this.bombPurpose = false
     }
 
     draw() {
@@ -142,10 +143,9 @@ class Game {
         game.player.shoots.forEach(function (shoot){
             shoot.draw()
             //here i check if colided
-            if(shoot.checkIfTarget(shoot,game.obstacle[0])){
+            if(shoot.checkIfTarget(shoot, game.obstacle[0])){
                 console.log('not colided')
-            } else {
-                console.log('colided')
+               
             }
         })
 

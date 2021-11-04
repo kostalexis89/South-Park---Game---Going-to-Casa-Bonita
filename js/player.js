@@ -1,5 +1,4 @@
-class Player {
-    
+class Player { 
     constructor() {
         this.gravity = 0.3
         this.velocity = 0
@@ -13,9 +12,8 @@ class Player {
         this.cryingIsPlaying = false
         this.something = true
         this.nuggets = 0
-        this.boxes =0
+        this.boxes =5
         this.shoots = []
-    
     }
     draw() {
         //in every draw I check if Eric cartman is alive or dead. If he is dead then we will add the explosion gif
@@ -60,5 +58,4 @@ class Player {
         this.shoots.push(new Shoots(game.coins[1].image)) 
         }
     }
-    
 }

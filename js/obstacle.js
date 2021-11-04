@@ -67,14 +67,10 @@ class Shoots {
         this.width = 130
         this.height = 130
         this.image = image
-        this.bombPurpose = true
     }
     draw() {
        // console.log('i am drawing')
         //lets first draw the KFC BOX
-        
-    //THIS IS WRONG BECAUSE IT REMOVES ALL THE THINGS
-    // WE HAVE TO MAKE ANOTHER FUNCTION OUTSIDE OF THE DRAW
 
         //if(!this.bombPurpose){
             if(game.obstacle.length>0){
@@ -83,53 +79,32 @@ class Shoots {
                 this.y += sin(rotation) * 20;
                 image(this.image, this.x, this.y , this.width, this.height)
             }
-        // } else {
-        //     image(game.playerImage[2], this.x, this.y , 300, 300)
-        //     setInterval(() => {
-        //         game.player.shoots.shift()
-        //         game.obstacle.shift()
-        //     }, 2000);   
-           
-        // }
         
     }
     checkIfTarget(shoot, obstacle){
-        //console.log('I am checking if collided')
-        //if shoot hits game.obsacle[0]
-        //console.log(game.obstacle.length)
-        // if(true){
-        //     return true
-        // }else {
-        //     return false 
-        // } 
-        // const playerX = playerInfo.x + playerInfo.width / 2
-		// const playerY = playerInfo.y + playerInfo.height / 2
-		// const obstacleX = this.x + this.width// / 2
-		// const obstacleY = this.y + this.height// / 2
-		// if (dist(obstacleX, obstacleY, playerX, playerY) > 150) {
-		// 	return false
-		// } else {
-		// 	game.player.nuggets += this.points
-        //     if(game.player.nuggets>=5){
-        //         game.player.nuggets = 0
-        //         game.player.boxes++
-        //     }
-		// 	//console.log(game.player.score)
-		// 	return true
-		// }
         const bombX = shoot.x + shoot.width / 2
         const bombY = shoot.y + shoot.height / 2
         const obstacleX = obstacle.x + obstacle.width / 2
         const obstacleY = obstacle.y + obstacle.height / 2
 
         
-		if (dist(bombX, bombY, obstacleX, obstacleY) > 200) {
+		if (dist(bombX, bombY, obstacleX, obstacleY) > 190) {
+            game.bombPurpose = false
 			return false
 		} else {
+            game.bombX = obstacle.x
+            game.bombY = obstacle.y     
+            game.bombPurpose = true       
             game.player.shoots.shift()
             game.obstacle.shift()
-            console.log('Boom')
+            console.log('Boom') 
+            
+            
+            return true
         }
+    }
+    drawBoom() {
+
     }
     
 }

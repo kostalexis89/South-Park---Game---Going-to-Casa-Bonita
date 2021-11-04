@@ -11,5 +11,9 @@ class Background {
         if (game.backgroundImages[0].x < -width){
             game.backgroundImages[0].x = 0
         }
+        if(game.bombPurpose){
+            image(game.playerImage[2], game.bombX, game.bombY - 200, 400 , 400)
+            game.bombX-=game.backgroundImages[0].speed
+        }
     }
 }
