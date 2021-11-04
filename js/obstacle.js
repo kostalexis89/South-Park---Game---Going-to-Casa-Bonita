@@ -92,6 +92,7 @@ class Shoots {
             game.bombPurpose = false
 			return false
 		} else {
+            game.player.shooting--
             game.bombX = obstacle.x
             game.bombY = obstacle.y     
             game.bombPurpose = true       
