@@ -79,7 +79,6 @@ class Shoots {
                 this.y += sin(rotation) * 20;
                 image(this.image, this.x, this.y , this.width, this.height)
             }
-        
     }
     checkIfTarget(shoot, obstacle){
         const bombX = shoot.x + shoot.width / 2
@@ -103,5 +102,4 @@ class Shoots {
             return true
         }
     }
-    
 }

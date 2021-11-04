@@ -18,6 +18,7 @@ class Game {
         this.cartmanCries = loadSound('assets/sounds/cartmandies3.mp3');
         this.kyleImage = loadImage('assets/obstacle/kyle.gif')
         this.bombExplosion = loadImage('assets/coins/bomb-explosion.gif')
+        this.gameOverImage = loadImage('assets/background/press.png')
         this.opponents = [
             {
                 name: 'homeless',
@@ -79,7 +80,6 @@ class Game {
             }
         ]
     }
-    
     constructor() {
         this.background = new Background()
         this.player = new Player()
@@ -161,10 +161,21 @@ class Game {
 		})
         //drawing the score
         textSize(width / 40);
-        text('Chicken Nuggets :' + game.player.nuggets, width - 450, 100);
-        text('KFC Boxes :' + game.player.boxes, width - 330, 180);
-        textSize(100);
         fill(255, 0, 0);
+        text('Chicken Nuggets :' + game.player.nuggets, width - 450, 100);        
+        text('KFC Boxes :' + game.player.boxes, width - 330, 180);
+        textSize(25);
+        fill(255, 255, 255);
+        text('Space to jump, Enter to fire', 20 , 40);
+        textSize(100);
+        
+        
+        if(game.player.gameOver){
+            
+            setInterval(() => {
+                noLoop() 
+            }, 9000);  
+        }
     }
 
     checkIfAlive(){     

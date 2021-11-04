@@ -3,6 +3,7 @@ class Background {
     
     draw(){
        // console.log('this is the backround')
+        
        if(game.player.alive){
            game.backgroundImages[0].x -= game.backgroundImages[0].speed
     }
@@ -17,5 +18,10 @@ class Background {
             image(game.bombExplosion, game.bombX - 50, game.bombY - 200, 400 , 400)
             game.bombX-=game.backgroundImages[0].speed
         }
+        if(game.player.gameOver){
+            image(game.gameOverImage, 0, 0, width, height)
+        }
+        
     }
+
 }

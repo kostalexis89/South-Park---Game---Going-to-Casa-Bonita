@@ -1,5 +1,5 @@
 h1 {
-  font-size: 30px;
+  font-size: 60px;
 }
 
 body {
@@ -16,5 +16,10 @@ body {
   border: 10px double #910000;
   border-radius: 17px;
   -webkit-box-shadow: 2px 1px 6px 1px #D197FF; 
-box-shadow: 2px 1px 6px 1px #D197FF;
+  box-shadow: 2px 1px 6px 1px #D197FF;
 }
+
+/* .starter {
+  /* background-image: url('assets/background/logo.png');
+  background-repeat: no-repeat; */
+} */

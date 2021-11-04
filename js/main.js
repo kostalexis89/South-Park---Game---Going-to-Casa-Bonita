@@ -1,4 +1,4 @@
-const game = new Game();
+let game = new Game();
 
 function preload() {
     game.preload()
@@ -17,8 +17,12 @@ function keyPressed() {
     }
     if(keyCode===81){
         game.backgroundMusic.play()
+        
      }
      if((keyCode===13) && game.player.boxes>0){
          game.player.shoot()
+     }
+     if(keyCode===32 && game.player.gameOver){
+         window.location.reload()
      }
 }
