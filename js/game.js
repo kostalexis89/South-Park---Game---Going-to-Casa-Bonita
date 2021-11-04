@@ -116,18 +116,18 @@ class Game {
                 return true
             }
         })
-        console.log(this.obstacle)
+     //   console.log(this.obstacle)
         //next lines are all about drawing the chickenNuggets / coins
         if((Math.floor((Math.random() * 270))) % 249 === 0 && frameCount2 > 150){
             frameCount2 = 0
             //console.log('Iam here')
             let randomNumber = (Math.floor((Math.random() * 4)))
             if(randomNumber*this.coins[0].rare > randomNumber*this.coins[1].rare){
-                console.log('Nugget')
+               // console.log('Nugget')
                 this.nuggets.push(new Coins(this.coins[0]))
                // console.log(this.nuggets)
             } else {
-                console.log('box')
+               // console.log('box')
                 this.nuggets.push(new Coins(this.coins[1]))
             }
         }
@@ -138,10 +138,18 @@ class Game {
               //  console.log('I am drawing the coin')
             }
 		})
-        //HERE I DRAW THE 
+        //HERE I DRAW THE KFC BOMBS!!!!!!!
         game.player.shoots.forEach(function (shoot){
             shoot.draw()
+            //here i check if colided
+            if(shoot.checkIfTarget(shoot)){
+                console.log('not colided')
+            } else {
+                console.log('colided')
+            }
         })
+
+        
 
         this.nuggets = this.nuggets.filter(nugget => {
 			if (nugget.collision(this.player)) {
@@ -156,14 +164,13 @@ class Game {
         text('KFC Boxes :' + game.player.boxes, width - 330, 180);
         textSize(100);
         fill(255, 0, 0);
-
     }
-    checkIfAlive(){
-        
+
+    checkIfAlive(){     
         this.obstacle.forEach(function (opponent) {
             if((opponent.x - game.player.x - game.player.width + 70) < 1 && (game.player.x - opponent.x - opponent.width +160)<1) {
                 if(Math.abs(game.player.y - opponent.y)<200){
-                 console.log('looser')
+               //  console.log('looser')
                  game.player.alive = false
                  if(!game.player.cryingIsPlaying){
                      game.backgroundMusic.stop()

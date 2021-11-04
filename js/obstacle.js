@@ -67,17 +67,40 @@ class Shoots {
         this.width = 130
         this.height = 130
         this.image = image
+        this.bombPurpose = true
     }
     draw() {
-        console.log('i am drawing')
+       // console.log('i am drawing')
         //lets first draw the KFC BOX
-    
-        if(game.obstacle.length>0){
-            let rotation = atan2(game.obstacle[0].y -this.y, game.obstacle[0].x - this.x )
-            this.x += cos(rotation) * 20;
-            this.y += sin(rotation) * 20;
-            image(this.image, this.x, this.y , this.width, this.height)
+        
+    //THIS IS WRONG BECAUSE IT REMOVES ALL THE THINGS
+    // WE HAVE TO MAKE ANOTHER FUNCTION OUTSIDE OF THE DRAW
+
+        //if(!this.bombPurpose){
+            if(game.obstacle.length>0){
+                let rotation = atan2(game.obstacle[0].y -this.y, game.obstacle[0].x - this.x )
+                this.x += cos(rotation) * 20;
+                this.y += sin(rotation) * 20;
+                image(this.image, this.x, this.y , this.width, this.height)
+            }
+        // } else {
+        //     image(game.playerImage[2], this.x, this.y , 300, 300)
+        //     setInterval(() => {
+        //         game.player.shoots.shift()
+        //         game.obstacle.shift()
+        //     }, 2000);   
+           
+        // }
+        
+    }
+    checkIfTarget(shoot){
+        //console.log('I am checking if collided')
+        if(true){
+            return true
+        }else {
+            return false 
         }
+        
     }
     
 }

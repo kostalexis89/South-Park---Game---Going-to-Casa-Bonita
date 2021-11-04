@@ -60,4 +60,5 @@ class Player {
         this.shoots.push(new Shoots(game.coins[1].image)) 
         }
     }
+    
 }
