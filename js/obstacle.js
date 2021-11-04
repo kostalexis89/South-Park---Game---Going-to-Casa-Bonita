@@ -98,7 +98,7 @@ class Shoots {
             game.player.shoots.shift()
             game.obstacle.shift()
             console.log('Boom') 
-            
+            game.bombExplosion = loadImage('assets/coins/bomb-explosion.gif')
             
             return true
         }

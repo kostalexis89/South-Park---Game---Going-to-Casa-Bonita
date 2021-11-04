@@ -1,8 +1,6 @@
 class Background {
     //we need a draw function so the backround can draw its  self
     
-    
-
     draw(){
        // console.log('this is the backround')
        if(game.player.alive){
