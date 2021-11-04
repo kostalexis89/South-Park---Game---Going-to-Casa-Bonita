@@ -1,5 +1,8 @@
 class Background {
     //we need a draw function so the backround can draw its  self
+    
+    
+
     draw(){
        // console.log('this is the backround')
        if(game.player.alive){
@@ -12,7 +15,8 @@ class Background {
             game.backgroundImages[0].x = 0
         }
         if(game.bombPurpose){
-            image(game.playerImage[2], game.bombX, game.bombY - 200, 400 , 400)
+            
+            image(game.bombExplosion, game.bombX - 50, game.bombY - 200, 400 , 400)
             game.bombX-=game.backgroundImages[0].speed
         }
     }

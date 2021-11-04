@@ -103,8 +103,5 @@ class Shoots {
             return true
         }
     }
-    drawBoom() {
-
-    }
     
 }

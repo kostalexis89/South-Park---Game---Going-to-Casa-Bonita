@@ -17,6 +17,7 @@ class Game {
         this.backgroundMusic = loadSound('assets/sounds/Minorities in my Waterpark.mp3')
         this.cartmanCries = loadSound('assets/sounds/cartmandies3.mp3');
         this.kyleImage = loadImage('assets/obstacle/kyle.gif')
+        this.bombExplosion = loadImage('assets/coins/bomb-explosion.gif')
         this.opponents = [
             {
                 name: 'homeless',
