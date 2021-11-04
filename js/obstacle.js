@@ -93,14 +93,43 @@ class Shoots {
         // }
         
     }
-    checkIfTarget(shoot){
+    checkIfTarget(shoot, obstacle){
         //console.log('I am checking if collided')
-        if(true){
-            return true
-        }else {
-            return false 
-        }
+        //if shoot hits game.obsacle[0]
+        //console.log(game.obstacle.length)
+        // if(true){
+        //     return true
+        // }else {
+        //     return false 
+        // } 
+        // const playerX = playerInfo.x + playerInfo.width / 2
+		// const playerY = playerInfo.y + playerInfo.height / 2
+		// const obstacleX = this.x + this.width// / 2
+		// const obstacleY = this.y + this.height// / 2
+		// if (dist(obstacleX, obstacleY, playerX, playerY) > 150) {
+		// 	return false
+		// } else {
+		// 	game.player.nuggets += this.points
+        //     if(game.player.nuggets>=5){
+        //         game.player.nuggets = 0
+        //         game.player.boxes++
+        //     }
+		// 	//console.log(game.player.score)
+		// 	return true
+		// }
+        const bombX = shoot.x + shoot.width / 2
+        const bombY = shoot.y + shoot.height / 2
+        const obstacleX = obstacle.x + obstacle.width / 2
+        const obstacleY = obstacle.y + obstacle.height / 2
+
         
+		if (dist(bombX, bombY, obstacleX, obstacleY) > 200) {
+			return false
+		} else {
+            game.player.shoots.shift()
+            game.obstacle.shift()
+            console.log('Boom')
+        }
     }
     
 }
