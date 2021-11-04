@@ -1,4 +1,4 @@
-# South-Park---Game---Going-to-Casa-Bonita
+# South-Park-Game-JvScrpt-HelpEricClearTheStreets
 
 This game has been developed by me 'https://github.com/kostalexis89', regarding an assesmnent while i was studying at Iron Hack / Web Developing Bootcamp.
 
