@@ -12,7 +12,7 @@ class Player {
         this.cryingIsPlaying = false
         this.something = true
         this.nuggets = 0
-        this.boxes =5
+        this.boxes =1
         this.shoots = []
         this.points = 0
     }
