@@ -20,18 +20,5 @@ I dont have any intention of selling this product, it s just made for educationa
 -Press Space to jump. "Eric Cartman has to jump all over the obstacles"
 -Collect the Chicken Nuggets and the KFC Boxes. "Every chicken Nugget gives u 1 point. And every 5 points U have a KFC Box"
 -Press enter to bomb out the Obstacles while spending 1 KFC Box
-                
-                              ------------------POINTS---------------
-                  
-                  
-                  -Hommie --> 50 points. Thats how mch their Iphone costs. Every hommie has an I phon
-                  -Kyle --> 500 Points because he is a fckin Jew!
-                  -Orphan --> 600 Points. Their kidneys are super ecpensive in the dark Web
-                  -Tsoupakabra --> 200 points.
-                  -Paris Hilton --> 20 points. She is just a cheap whore
-                  -Jesus --> -1000 points. No fucks up with Jesus
-                  -manbearbig --> 600 points! U are saving the humanity!
-                  
-                  Collect as many points and clear the streets. Eric needs an empty waterpark after all!
                   
                   
